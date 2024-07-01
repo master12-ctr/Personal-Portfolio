@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Users List</h1>
+  <ul>
+    {% for users in user %}
+      <div class="user-info">
+        <div class="profile-picture">
+            <img src="{{ users.profile_picture.url }}" alt="Profile Picture" style="max-width: 200px; max-height: 200px;">
+        </div>
+        <div class="user-details">
+          <h2>{{ users.username }}</h2>
+          <p>{{ users.first_name }} {{ users.last_name }}</p>
+          <p>{{ users.email }}</p>
+          <p>{{ users.bio }}</p>
+          <p>{{ users.website_link }}</p>
+          <p>{{ users.location }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </ul>
+{% endblock %}

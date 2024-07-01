@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detail View</title>
+</head>
+<body>
+    <!-- <h1>{{ certificate.title }}</h1>
+    <p>{{ certificate.description }}</p> -->
+    {% if certificate.image.url|slice:'-3:'|lower == 'pdf' %}
+        <script>
+            window.location.href = "{{ certificate.image.url }}";
+        </script>
+    {% else %}
+        <img src="{{ certificate.image.url }}" alt="{{ certificate.title }}">
+    {% endif %}
+</body>
+</html>
